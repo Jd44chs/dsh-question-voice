@@ -1,0 +1,10 @@
+# dsh-question-voice bundle patch: inserts the question-voice plugin row into
+# the profile roster. Applied as a profile bundle layer (the `dsh.bundle.patch`
+# manifest field).
+#
+# The row is a bare plugin by package name; the `dsh.client` declaration in
+# package.json makes the browser half (exports "./client") load in the web GUI,
+# where it puts a microphone button on the ask_user_question answer card.
+- insert:
+    - id: dsh-question-voice
+      name: 'dsh-question-voice'

@@ -1,0 +1,48 @@
+{
+  "name": "dsh-question-voice",
+  "version": "0.1.0",
+  "description": "Voice input for the DSH question card: a mic beside the free-text answer field records speech, transcribes it with the speech plugin already running in the profile, and inserts the text into that field.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseekruntime",
+    "voice",
+    "speech-to-text",
+    "sensevoice",
+    "ask-user-question"
+  ],
+  "license": "MIT",
+  "author": "Jd44chs",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "immediately": true
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}
