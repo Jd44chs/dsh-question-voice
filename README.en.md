@@ -6,6 +6,8 @@ The built-in dictation in DSH only covers the chat composer. This plugin brings 
 
 ## What it looks like
 
+![Four states: idle / recording / transcribing / text inserted](docs/states.png)
+
 - A mic icon sits to the right of the answer field. The textarea is never replaced or hidden: voice and typing coexist.
 - While recording, a compact bar expands in place: `×` cancel, a live waveform, a timer, and a stop button. Transcription starts only after you stop — the same rhythm as the official mic.
 - The recognised text is inserted at the end of the field, separated from existing text by a space, with the caret left at the end.
@@ -23,6 +25,17 @@ The built-in dictation in DSH only covers the chat composer. This plugin brings 
 
 Prerequisite: `@deepseek-ai/dsh-experimental-voice-input-bundle` is enabled in your profile (if the chat composer has a mic, it is).
 
+One line (recommended):
+
+```bash
+dsh plugin add github:Jd44chs/dsh-question-voice#v0.1.0 --profile desktop
+```
+
+Then refresh the Web GUI (Ctrl+R). The host half is an empty stub, but the bundle entry is still mounted at process start — if the mic does not show up after a refresh, restart DSH once.
+
+<details>
+<summary>Manual install (if you prefer not to use <code>dsh plugin add</code>)</summary>
+
 1. Put this repository anywhere, then add it to your profile's `package.json`:
 
 ```json
@@ -39,7 +52,9 @@ Prerequisite: `@deepseek-ai/dsh-experimental-voice-input-bundle` is enabled in y
       name: 'dsh-question-voice'
 ```
 
-3. Make sure `node_modules/dsh-question-voice` links to the plugin directory, then refresh the Web GUI (Ctrl+R). No restart of DSH is required.
+3. Make sure `node_modules/dsh-question-voice` links to the plugin directory, then refresh the Web GUI (Ctrl+R); restart DSH if the button does not appear.
+
+</details>
 
 On Windows, edit `cordis.patch.yml` byte-exactly (Python is safest). PowerShell's `Set-Content -Encoding UTF8` writes a BOM, converts LF to CRLF and mangles non-ASCII comments, which breaks the YAML.
 
@@ -55,6 +70,10 @@ On Windows, edit `cordis.patch.yml` byte-exactly (Python is safest). PowerShell'
 Errors (microphone denied, nothing recognised, recording too long, speech service missing) show as a small dot on the button with the reason in its tooltip; no dialogs, no interruption while typing.
 
 ## Waveform skins
+
+Three looks for the bars in the recording bar; A is the default (each row below is the real recording bar rendered by this plugin):
+
+![The three waveform skins](docs/skins.png)
 
 | Skin | Look |
 | --- | --- |

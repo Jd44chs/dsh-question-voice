@@ -8,6 +8,8 @@
 
 ## 效果
 
+![四个状态：待命 / 录音中 / 识别中 / 出字](docs/states.png)
+
 - 输入框右侧一个麦克风图标，不挤占、不替换原本的输入框：语音和手动打字并存。
 - 录音时原地展开一条录音条：`×` 取消 · 实时波形 · 计时 · 停止钮。点停止才识别，和官方聊天框麦克风一样的节奏。
 - 识别结果以插入方式写进输入框，跟已有文字自动用空格分隔，光标停在末尾，可继续手改或回车提交。
@@ -26,6 +28,17 @@
 
 前提：profile 里已启用 `@deepseek-ai/dsh-experimental-voice-input-bundle`（DSH 桌面端插件管理器里能看到、且聊天输入框有麦克风就说明已在跑）。
 
+一行装（推荐）：
+
+```bash
+dsh plugin add github:Jd44chs/dsh-question-voice#v0.1.0 --profile desktop
+```
+
+装完刷新 Web GUI（Ctrl+R）。**宿主半边是空的，但 bundle 条目仍需要 DSH 进程重启才会挂上**——如果刷完页面看不到按钮，重启一次 DSH 即可。
+
+<details>
+<summary>手动安装（不想用 <code>dsh plugin add</code> 时）</summary>
+
 1. 把本仓库放进任意目录，然后在 profile 的 `package.json` 里加依赖（`link:` 指向本地目录，或用 `file:`）：
 
 ```json
@@ -43,7 +56,9 @@
 ```
 
 3. 在 profile 目录建好 `node_modules/dsh-question-voice` 链接（`mklink /J`，或直接 `npm install`）。
-4. 刷新 Web GUI（Ctrl+R）。不需要重启 DSH 进程。
+4. 刷新 Web GUI（Ctrl+R），看不到按钮就重启 DSH。
+
+</details>
 
 > Windows 上改 `cordis.patch.yml` 建议用 Python 字节级读写：PowerShell 的 `Set-Content -Encoding UTF8` 会写 BOM、把 LF 变 CRLF，中文注释会乱码，YAML 直接坏掉。
 
@@ -62,7 +77,9 @@
 
 ## 波形皮肤
 
-录音条里那排跳动的柱子有三款观感，默认 A：
+录制条里那排跳动的柱子有三款观感，默认 A（下面是三款各自的录音条实拍）：
+
+![三款波形皮肤](docs/skins.png)
 
 | 皮肤 | 观感 |
 | --- | --- |
