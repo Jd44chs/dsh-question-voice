@@ -1,0 +1,8 @@
+node_modules/
+*.bak
+*.log
+.vscode/
+.DS_Store
+Thumbs.db
+# 保持文本文件 LF，避免跨平台 diff 噪音
+* text=auto eol=lf
