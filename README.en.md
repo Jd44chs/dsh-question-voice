@@ -6,9 +6,9 @@ The built-in dictation in DSH only covers the chat composer. This plugin brings 
 
 ## What it looks like
 
-![A whole question card: title, question, options, the free-text answer field with the mic on its right, and the skip/submit footer](docs/card.png)
+![A whole question card, real screenshot: title, question, options, the free-text answer field with the mic on its right, and the skip/submit footer](docs/card-real.png)
 
-That is the full card. The plugin only adds a mic to the free-text answer row — the options, the page counter, skip/submit and the close button stay exactly as they are.
+That is the full card (real screenshot). The plugin only adds a mic to the right of the free-text answer row — the question, options, page counter, skip/submit and the close button stay exactly as they are.
 
 ![Four states: idle / recording / transcribing / text inserted](docs/states.png)
 
