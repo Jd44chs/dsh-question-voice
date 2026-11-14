@@ -1,5 +1,7 @@
 # dsh-question-voice
 
+[![release](https://img.shields.io/github/v/release/Jd44chs/dsh-question-voice?color=C4302B&label=release)](https://github.com/Jd44chs/dsh-question-voice/releases) [![license](https://img.shields.io/github/license/Jd44chs/dsh-question-voice?color=C4302B)](LICENSE) [![stars](https://img.shields.io/github/stars/Jd44chs/dsh-question-voice?color=C4302B)](https://github.com/Jd44chs/dsh-question-voice/stargazers) [![downloads](https://img.shields.io/github/downloads/Jd44chs/dsh-question-voice/total?color=C4302B)](https://github.com/Jd44chs/dsh-question-voice/releases)
+
 给 DeepSeekRuntime（DSH）Web GUI 的**提问卡片**加语音输入：`ask_user_question` 弹出的卡片里，「自定义答案」输入框右侧多一个麦克风按钮——点一下开始录音，再点一下停止，本地语音识别（SenseVoice）把话变成文字直接落进这个输入框，你可以继续改、然后回车提交。
 
 > Voice input for the answer card that `ask_user_question` renders in the DSH Web GUI. Click the mic beside the free-text field, speak, click again to stop: the recording is transcribed by the speech service already running in your profile and the text lands in that field, still editable, still submittable by hand.
